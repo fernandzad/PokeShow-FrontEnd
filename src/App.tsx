@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NotFound from './pages/404'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import dotnev from 'dotenv';
 
-const App = () => {
+dotnev.config();
+
+const menus = [
+  '/home',
+  '/add',
+  '/update',
+  '/delete',
+]
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar routes={menus} />
+      <Router>
+        <Switch>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </>
+    
   );
 }
 

@@ -2,16 +2,21 @@
   "name": "pokeshow",
   "version": "0.1.0",
   "private": true,
+  "main": "index.tsx",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router": "^5.1.4",
+    "@types/styled-components": "^4.4.2",
+    "bootstrap": "^4.4.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "typescript": "~3.7.2"
   },
@@ -19,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ts": "tsc -w"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/react-router-dom": "^5.1.3",
+    "dotenv": "^8.2.0"
   }
 }
