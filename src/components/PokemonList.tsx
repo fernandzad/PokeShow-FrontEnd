@@ -15,7 +15,7 @@ const PokemonList: React.FC = () => {
             <div className="container">
                 {
                     pokecards.map( (pokecard: IPokemon, key: number) => (
-                            <div>
+                            <div key={key}>
                                 <PokeCard key={key} { ...pokecard } />
                                 <br/>
                             </div>
