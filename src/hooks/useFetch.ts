@@ -11,7 +11,7 @@ const useFetch = (url: string) => {
 
                 let response: Response = await fetch(url);
                 let data = await response.json();
-                await new Promise((resolve, reject) => setTimeout(resolve, 2000));
+                //await new Promise((resolve, reject) => setTimeout(resolve, 2000));
                 
                 console.log(data);
                 setPokeCards(data);

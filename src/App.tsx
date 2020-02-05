@@ -10,7 +10,7 @@ dotnev.config();
 
 const menus = [
   '/home',
-  '/add',
+  '/pokemon/add',
   '/update',
   '/delete',
 ];

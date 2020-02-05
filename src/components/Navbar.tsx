@@ -22,7 +22,7 @@ const Navbar: React.FC<Props> = ({routes}) => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href={routes[index.Add]}>Create <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href={routes[index.Add]}>New capture <span className="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>

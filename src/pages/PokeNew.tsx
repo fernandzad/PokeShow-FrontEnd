@@ -6,11 +6,11 @@ import PokeForm from '../components/PokeForm';
 
 const PokeNew: React.FC = () => {
     const title: string = 'Add new';
-    const subtitle: string = 'Please enter the information of your new captured';
+    const subtitle: string = 'Please enter the information of your new capture and you\'ll see it on the left card.';
     const [values, setValues] = useFormState({
                                 name: '', type: '',
                                 number: '', weight: '',
-                                height: '', evolution: ''
+                                height: '', evolution: '', image: ''
                             });
 
     return (
@@ -19,6 +19,7 @@ const PokeNew: React.FC = () => {
                 <div className="row">
                         <div className="text-left">
                             <Title title={title} subtitle={subtitle}/>
+                            <br/>
                         </div>
                 </div>
                 <div className="row">

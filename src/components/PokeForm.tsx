@@ -1,5 +1,7 @@
-import React from 'react';
-import IPokemon from '../interfaces/IPokemon'
+import React, { FormEvent, useState } from 'react';
+import IPokemon from '../interfaces/IPokemon';
+import { useHistory } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 interface IForm{
     form: IPokemon,
@@ -7,17 +9,50 @@ interface IForm{
 }
 
 const PokeForm: React.FC<IForm> = ({form, onChange}) => {
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+
+    const handleSubmit = async (e: FormEvent<EventTarget>) => {
+        setLoading(true);
+        e.preventDefault();
+
+        try {
+            let config = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(form)
+            }
+            let response = await fetch(`${process.env.REACT_APP_API_URL}`, config);
+            let json = await response.json();
+
+            console.log(json);
+
+            setLoading(false);
+            
+            //Gracias a React Router
+            history.push('/');
+
+        } catch (error) {
+            setLoading(false);
+            console.log(error.message);
+        }
+    }
+
+    if(loading)
+        return <Loader />
 
     return (
         <>
             <div className="container">
-                <form >
-
+                <form onSubmit={handleSubmit}>
                     <div className="form-row">
                         <div className="col-5">
                             <input type="text"
                                 className="form-control"
-                                placeholder="name"
+                                placeholder="Name"
                                 name="name"
                                 onChange={onChange}
                                 value={form.name}
@@ -27,7 +62,7 @@ const PokeForm: React.FC<IForm> = ({form, onChange}) => {
                         <div className="col-4">
                             <input type="text"
                                 className="form-control"
-                                placeholder="type"
+                                placeholder="Type"
                                 name="type"
                                 onChange={onChange}
                                 value={form.type}
@@ -36,7 +71,7 @@ const PokeForm: React.FC<IForm> = ({form, onChange}) => {
                         <div className="col-3">
                             <input type="text"
                                 className="form-control"
-                                placeholder="number"
+                                placeholder="Number"
                                 name="number"
                                 onChange={onChange}
                                 value={form.number}
@@ -48,7 +83,7 @@ const PokeForm: React.FC<IForm> = ({form, onChange}) => {
                         <div className="col-4">
                             <input type="text"
                                 className="form-control"
-                                placeholder="weight"
+                                placeholder="Weight"
                                 name="weight"
                                 onChange={onChange}
                                 value={form.weight}
@@ -57,7 +92,7 @@ const PokeForm: React.FC<IForm> = ({form, onChange}) => {
                         <div className="col-4">
                             <input type="text"
                                 className="form-control"
-                                placeholder="weight"
+                                placeholder="Height"
                                 name="height"
                                 onChange={onChange}
                                 value={form.height}
@@ -66,10 +101,10 @@ const PokeForm: React.FC<IForm> = ({form, onChange}) => {
                         <div className="col-4">
                             <input type="text"
                                 className="form-control"
-                                placeholder="Type"
-                                name="type"
+                                placeholder="Evolution"
+                                name="evolution"
                                 onChange={onChange}
-                                value={form.type}
+                                value={form.evolution}
                             />
                         </div>
                     </div>
