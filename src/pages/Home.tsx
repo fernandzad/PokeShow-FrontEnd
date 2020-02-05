@@ -1,8 +1,8 @@
 import React from 'react';
-import Title from '../components/Title'
-import PokemonList from '../components/PokemonList'
-import Add from '../components/Add'
-import '../components/styles/home.css'
+import Title from '../components/Title';
+import PokemonList from '../components/PokemonList';
+import Add from '../components/Add';
+import '../components/styles/home.css';
 
 const Home: React.FC = () => {
     const title: string = 'Welcome'
