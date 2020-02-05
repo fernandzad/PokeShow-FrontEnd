@@ -2,12 +2,6 @@ import React from 'react';
 import IPokemon from '../interfaces/IPokemon';
 
 const PokeCard: React.FC<IPokemon> = ({name, type, number, image}) => {
-    // const {
-    //     name,
-    //     type,
-    //     number,
-    //     image
-    // } = props;
 
     return (
         <>
