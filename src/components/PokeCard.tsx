@@ -15,9 +15,7 @@ const PokeCard: React.FC<IPokemon> = ({name, type, number, image}) => {
                 
                 <div className="card-body">
                     <h5 className="card-title">{name} #{number}</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <img src={image} alt=""/>
-                    <a href='/' className="btn btn-primary">Press me</a>
                 </div>
                 <div className="card-footer text-muted">
                     {type}
