@@ -12,7 +12,7 @@ const Title: React.FC<Props> = ({title, subtitle}) => {
                 <h1 className="display-4">{ title }</h1>
             </div>
             <div>
-                <p className="lead text-muted">
+                <p className="lead text-mute">
                     { subtitle }
                 </p>
             </div>

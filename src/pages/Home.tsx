@@ -10,14 +10,18 @@ const Home: React.FC = () => {
     return (
         <>
             <div className="container mx-auto padding-home">
-                <div className="text-left">
-                    <Title title={title} subtitle={subtitle}/>
+                <div className="row">
+                    <div className="col-md 6">
+                        <div className="text-left">
+                            <Title title={title} subtitle={subtitle}/>
+                        </div>
+                    </div>
+                    <div className="col-md 6">
+                         <Add/>
+                    </div>
                 </div>
                 <div>
                     <PokemonList />
-                </div>
-                <div>
-                    <Add />
                 </div>
             </div>
 
