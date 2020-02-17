@@ -5,24 +5,23 @@ import Add from '../components/Add';
 import '../components/styles/home.css';
 
 const Home: React.FC = () => {
-    const title: string = 'Welcome'
-    const subtitle: string = 'Here you cand find all your Pokémon :D'
-    return (
-        <>
-            <div className="container mx-auto padding-home">
-                <div className="text-left">
-                    <Title title={title} subtitle={subtitle}/>
-                </div>
-                <div>
-                    <PokemonList />
-                </div>
-                <div>
-                    <Add />
-                </div>
-            </div>
+  const title = 'Welcome';
+  const subtitle = 'Here you cand find all your Pokémon :D';
+  return (
+    <>
+      <div className="container mx-auto padding-home">
+        <div className="text-left">
+          <Title title={title} subtitle={subtitle} />
+        </div>
+        <div>
+          <PokemonList />
+        </div>
+        <div>
+          <Add />
+        </div>
+      </div>
+    </>
+  );
+};
 
-        </>
-    )
-}
-
-export default Home
+export default Home;

@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/loader.css';
 
 const Loader: React.FC = () => {
-    return <div className="loader">Loading...</div>
-}
+  return <div className="loader">Loading...</div>;
+};
 
 export default Loader;

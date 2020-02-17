@@ -1,16 +1,16 @@
-interface IWeakness{
-    weakness: string[]
+interface Weakness {
+  weakness: string[];
 }
 
-interface IPokemon{
-    name: string,
-    type: string,
-    number: string,
-    weight: string,
-    height: string,
-    evolution: string,
-    weaknesses: IWeakness,
-    image: string,
+interface Pokemon {
+  name: string;
+  type: string;
+  number: string;
+  weight: string;
+  height: string;
+  evolution: string;
+  weaknesses: Weakness;
+  image: string;
 }
 
-export default IPokemon;
+export default Pokemon;
